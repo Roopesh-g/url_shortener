@@ -1,5 +1,5 @@
 /*
-This file is used for creation of MongoDB Schema.
+The code below is used for creation of MongoDB Schema.
 */
 const mongoose = require('mongoose')
 
