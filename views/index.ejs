@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>URL Shortener</title>
+    <style>
+        .center {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            top: 30%;
+            left: 50%;
+            margin: 0 0 0 -180px;
+}
+    </style>
+</head>
+<body>
+    <div class="container center">
+        <h1>Simplify your URLs</h1>
+        <form action="/" method="POST" class="my-4 form-inline"> 
+            <div class="mb-3">      
+                <input required placeholder="Original URL" class="form-control" type="url" name="originalUrl" id="orgUrl"><br />
+                <button type="submit" class="btn btn-primary">Shorten URL</button><br /><br />
+
+                <% if (locals.short_url) { %>
+                    <!-- condition to display short url, if exist -->
+                    <!-- <a href="<%= short_url %>"><%= short_url %> </a> -->
+                    <label for="shortUrl" class="form-control"><%= locals.url %> can be accessed via:</label>
+                    <input class="form-control" type="text" name="shortUrl" id="shortUrl" value="<%= locals.short_url %>" readonly>
+                <% } %>
+
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
